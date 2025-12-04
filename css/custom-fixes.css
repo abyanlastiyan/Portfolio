@@ -1,0 +1,258 @@
+/* Custom CSS Fixes for Mobile Scroll and Responsive Issues */
+
+/* Fix mobile scroll issue in hero section */
+@media (max-width: 768px) {
+  .hero .slider-item,
+  .hero .one-third {
+    pointer-events: none;
+  }
+  
+  .hero .one-forth,
+  .hero .slider-text {
+    pointer-events: auto;
+  }
+  
+  .hero .img {
+    pointer-events: none;
+  }
+  
+  section#home-section {
+    overflow: visible !important;
+    position: relative;
+    touch-action: pan-y;
+  }
+  
+  .home-slider .slider-item {
+    min-height: 100vh;
+  }
+  
+  .owl-carousel .owl-stage-outer {
+    overflow: visible !important;
+  }
+}
+
+/* Make skills section responsive without percentage */
+@media (max-width: 768px) {
+  #skills-section .progress-wrap {
+    margin-bottom: 1.5rem;
+  }
+  
+  #skills-section .progress-wrap h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  #skills-section .progress {
+    height: 30px;
+  }
+  
+  #skills-section .progress-bar span {
+    display: none;
+  }
+}
+
+/* Hide percentage on all screen sizes */
+#skills-section .progress-bar span {
+  display: none !important;
+}
+
+/* PERBAIKAN 1: Resume box FORMAT PERSIS SAMA dengan Services - TANPA BORDER! */
+#resume-section .row > .col-md-6 {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-wrap {
+  min-height: 300px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 40px !important;
+  padding: 2em !important; /* SAMA dengan services-1 */
+  border-radius: 0 !important; /* TIDAK ADA border radius */
+  border: none !important; /* TIDAK ADA BORDER - SAMA dengan services */
+  background: rgba(255, 255, 255, 0.1) !important; /* SAMA dengan services-1 */
+  box-shadow: 0px 20px 69px -27px rgba(0, 0, 0, 0.17) !important; /* SAMA dengan services-1 */
+  -webkit-box-shadow: 0px 20px 69px -27px rgba(0, 0, 0, 0.17) !important;
+  -moz-box-shadow: 0px 20px 69px -27px rgba(0, 0, 0, 0.17) !important;
+  transition: all 0.3s ease;
+  width: 100% !important;
+}
+
+.resume-wrap:hover {
+  background: #ffbd39 !important; /* SAMA hover dengan services */
+  box-shadow: 0px 20px 69px -27px rgba(0, 0, 0, 0.17) !important;
+  transform: translateY(-5px);
+}
+
+.resume-wrap:hover .date,
+.resume-wrap:hover h2,
+.resume-wrap:hover .position,
+.resume-wrap:hover p {
+  color: #000 !important; /* Text jadi hitam saat hover seperti services */
+}
+
+.resume-wrap .date {
+  margin-bottom: 15px !important;
+  font-weight: 700 !important;
+  color: #ffbd39 !important;
+  font-size: 14px !important;
+  display: block !important;
+}
+
+.resume-wrap h2 {
+  font-size: 20px !important;
+  margin-bottom: 12px !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+
+.resume-wrap .position {
+  margin-bottom: 15px !important;
+  display: block !important;
+  font-size: 14px !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}
+
+.resume-wrap p {
+  flex-grow: 1 !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  color: #fff !important;
+  margin-bottom: 0 !important;
+}
+
+/* PERBAIKAN 2: FIX Icon IoT - FORCE DISPLAY! */
+.services-1 .icon {
+  display: block !important;
+  margin-bottom: 30px !important;
+}
+
+.services-1 .icon i {
+  font-size: 60px !important;
+  line-height: 1.0 !important;
+  color: #ffbd39 !important;
+  display: inline-block !important;
+  font-family: 'Ionicons' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  speak: none !important;
+  text-transform: none !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Specific fix for ion-ios-bolt */
+.ion-ios-bolt:before {
+  content: "\f377" !important;
+  font-family: 'Ionicons' !important;
+}
+
+/* Ensure all Ionicons display */
+[class^="ion-"],
+[class*=" ion-"] {
+  display: inline-block !important;
+  font-family: 'Ionicons' !important;
+  speak: none !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Alternative: Use Unicode directly for IoT icon */
+.services-1 .icon i.ion-ios-bolt {
+  font-size: 60px !important;
+  color: #ffbd39 !important;
+}
+
+.services-1 .icon i.ion-ios-bolt::before {
+  content: "⚡" !important; /* Fallback ke emoji jika font tidak load */
+  font-family: 'Ionicons', Arial, sans-serif !important;
+}
+
+/* PERBAIKAN 3: Kembalikan background projects transparan */
+#projects-section {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.ftco-section.ftco-project {
+  background: transparent !important;
+}
+
+/* Add smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive form adjustments */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 2rem 1rem !important;
+  }
+}
+
+/* Improve social icons */
+.ftco-footer-social li a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items-center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 189, 57, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ftco-footer-social li a:hover {
+  background: #ffbd39;
+  transform: translateY(-3px);
+}
+
+.ftco-footer-social li a i {
+  font-size: 18px;
+}
+
+/* PERBAIKAN 4: Fix GPA counter - ukuran font SAMA */
+.counter-wrap .number {
+  font-size: 50px !important;
+  font-weight: 700 !important;
+}
+
+/* Remove ::after that causes size mismatch */
+#section-counter .col-md:last-child .number::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Improve address links */
+a[href*="maps.google"] {
+  transition: color 0.3s ease;
+}
+
+a[href*="maps.google"]:hover {
+  color: #ffbd39 !important;
+  text-decoration: underline !important;
+}
+
+/* Mobile navigation improvements */
+@media (max-width: 991px) {
+  .ftco-navbar-light {
+    background: #000 !important;
+  }
+  
+  .navbar-nav {
+    background: rgba(0,0,0,0.9);
+    padding: 10px 0;
+  }
+  
+  .resume-wrap {
+    min-height: 250px !important;
+  }
+}
